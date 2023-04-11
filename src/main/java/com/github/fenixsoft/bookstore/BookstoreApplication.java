@@ -25,6 +25,11 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 
 @SpringBootApplication
 @EnableCaching
+/**
+ * Spring Security默认是禁用注解的，要想开启注解，需要在继承WebSecurityConfigurerAdapter的类上加@EnableGlobalMethodSecurity注解，来判断用户对某个控制层的方法是否具有访问权限
+ * @EnableGlobalMethodSecurity 用于相当于Spring MVC传统xml配置的 <global-method-security> 标签
+ * 用来开启基于annotation注解，如@Sercutiry @PreAuthorize @PostAuthorize @PreFilter @PostFilter @RolesAllowed等的权限控制
+ */
 @EnableGlobalMethodSecurity(prePostEnabled = true, jsr250Enabled = true)
 public class BookstoreApplication {
     public static void main(String[] args) {
