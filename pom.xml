@@ -99,6 +99,10 @@
                 </configuration>
             </plugin>
             <plugin>
+                <!--
+                maven-surefire-plugin这个插件是执行junit、testng框架单元测试用例时使用的；
+               就是在maven的生命周期的测试阶段，通过插件来执行JUnit或者TestNG的测试用例。这个插件很好的兼容了一些测试框架如JUnit 3、JUnit 4等。
+                -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
@@ -107,6 +111,7 @@
                 </configuration>
             </plugin>
             <plugin>
+                <!--用于向CoverallsWeb服务提交Java代码覆盖率报告的-->
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
                 <version>4.3.0</version>
@@ -121,6 +126,10 @@
                 </dependencies>
             </plugin>
             <plugin>
+                <!--
+                IDEA有自己的coverage但是检测的不够全面，jacoco强调按照自己的规则来控制测试覆盖率 本文采取的是maven的jacoco插件，目的为了防止覆盖率过低，当不能通过jacoco检测（自己可以设置项目覆盖率）就不能打包
+                代码覆盖率统计神器-jacoco工具实战
+                -->
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.5</version>
