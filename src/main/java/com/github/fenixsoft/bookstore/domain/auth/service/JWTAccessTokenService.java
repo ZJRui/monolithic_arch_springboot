@@ -41,7 +41,7 @@ public class JWTAccessTokenService extends DefaultTokenServices {
      * 构建JWT令牌，并进行默认的配置
      */
     @Inject
-    public JWTAccessTokenService(JWTAccessToken token, OAuthClientDetailsService clientService, AuthenticationManager authenticationManager) {
+    public JWTAccessTokenService(JWTAccessTokenEnhancer token, OAuthClientDetailsService clientService, AuthenticationManager authenticationManager) {
         // 设置令牌的持久化容器
         // 令牌持久化有多种方式，单节点服务可以存放在Session中，集群可以存放在Redis中
         // 而JWT是后端无状态、前端存储的解决方案，Token的存储由前端完成

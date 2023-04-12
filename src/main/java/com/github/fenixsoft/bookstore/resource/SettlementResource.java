@@ -51,6 +51,10 @@ public class SettlementResource {
 
     /**
      * 提交一张交易结算单，根据结算单中的物品，生成支付单
+     *
+     * {"items":[{"amount":1,"id":2},{"amount":1,"id":5}],"purchase":{"name":"周志明","telephone":"18888888888","delivery":true,
+     * "address":{"province":"广东省","city":"广州市","area":"海珠区"},"location":"广东省  广州市 海珠区 唐家湾港湾大道科技一路3号远光软件股份有限公司","pay":"wechat","id":1,"username":"icyfenix",
+     * "avatar":"https://www.gravatar.com/avatar/1563e833e42fb64b41eed34c9b66d723?d=mp","email":"icyfenix@gmail.com"}}
      */
     @POST
     @RolesAllowed(Role.USER)

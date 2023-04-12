@@ -61,6 +61,8 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
         String password = (String) authentication.getCredentials();
         // AuthenticationException的子类定义了多种认证失败的类型，这里仅处“理用户不存在”、“密码不正确”两种
         // 用户不存在的话会直接由loadUserByUsername()抛出异常
+        //系统预置了一个用户（ user:icyfenix，p
+        // w:123456 ），也可以注册新用户来测试。
         UserDetails user = authenticAccountDetailsService.loadUserByUsername(username);
         if (!passwordEncoder.matches(password, user.getPassword())) throw new BadCredentialsException("密码不正确");
         // 认证通过，返回令牌
